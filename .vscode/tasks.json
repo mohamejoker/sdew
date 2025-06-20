@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "تهيئة قاعدة بيانات PostgreSQL للمشروع",
+			"command": "psql -U postgres -c \"CREATE DATABASE townai_db;\" && psql -U postgres -d townai_db -c \"CREATE USER townai_user WITH PASSWORD 'townai_pass';\" && psql -U postgres -d townai_db -c \"GRANT ALL PRIVILEGES ON DATABASE townai_db TO townai_user;\"",
+			"group": "build"
+		}
+	]
+}
